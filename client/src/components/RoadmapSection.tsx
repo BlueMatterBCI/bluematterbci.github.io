@@ -127,7 +127,7 @@ export default function RoadmapSection() {
                   Our device currently uses 10 electrodes to read physiological signals from the head.
                   These signals are processed and used to control a simple robot, demonstrating a new
                   modality of human-machine interaction. We can control components remotely using
-                  discrete eye movements \u2014 blinks and directional eye movements are configured
+                  discrete eye movements, blinks and saccades are configured
                   differently for different purposes.
                 </p>
               </div>
