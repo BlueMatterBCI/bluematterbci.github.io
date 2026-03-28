@@ -60,7 +60,7 @@ const nextSteps = [
   "Head-fitting mesh design for comfortable all-day wear",
   "Comfortable dry electrode development to replace gel-based sensors",
   "Higher electrode count for improved signal resolution",
-  "Discrete form-factor refinement for social acceptability",
+  "Discreet form-factor refinement for social acceptability",
   "Dynamical systems implementation for real-time adaptive control",
 ];
 
@@ -124,11 +124,9 @@ export default function RoadmapSection() {
                   Current Status
                 </h3>
                 <p className="text-muted-foreground leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-                  Our device currently uses 10 electrodes to read physiological signals from the head.
+                  Our device currently uses 4 electrodes to read eye motion and blinking.
                   These signals are processed and used to control a simple robot, demonstrating a new
-                  modality of human-machine interaction. We can control components remotely using
-                  discrete eye movements, blinks and saccades are configured
-                  differently for different purposes.
+                  modality of human-machine interaction. 
                 </p>
               </div>
             </div>
