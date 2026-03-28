@@ -59,10 +59,10 @@ export default function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Bridging{" "}
-            <span className="text-electric text-glow">Human Intention</span>
+            Technology{" "}
+            <span className="text-electric text-glow">Controlled by Thought</span>
             <br />
-            and Digital Action
+            No Implant Required
           </motion.h1>
 
           {/* Subheadline */}
