@@ -82,9 +82,9 @@ export default function AboutSection() {
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                BCIs Haven't Left
+                Clinical-grade performance still is not 
                 <br />
-                <span className="text-muted-foreground">the Lab</span>
+                <span className="text-electric">consumer-grade</span>
               </h2>
             </div>
           </FadeIn>
@@ -96,7 +96,7 @@ export default function AboutSection() {
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
               The technology readiness of consumer-grade non-invasive brain-computer interfaces
               has stagnated. The difficulties of processing brain signals and the high cost of
-              production have kept BCI applications confined to clinical environments \u2014 out of
+              production have kept BCI applications confined to clinical environments out of
               reach for hobbyists and consumers alike.
             </p>
             <p className="text-base text-muted-foreground/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
