@@ -94,10 +94,10 @@ export default function AboutSection() {
         <FadeIn delay={0.15}>
           <div className="max-w-3xl mb-16">
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4" style={{ fontFamily: "var(--font-body)" }}>
-              The technology readiness of consumer-grade non-invasive brain-computer interfaces
-              has stagnated. The difficulties of processing brain signals and the high cost of
-              production have kept BCI applications confined to clinical environments out of
-              reach for hobbyists and consumers alike.
+              Consumer-grade, non-invasive brain-computer interfaces (BCIs) aren't yet capable of advanced robotic control.
+              Development in this area has largely stagnated due to the difficulties of processing brain signals and the high cost of production,
+              thus restricting control applications to clinics and laboratories.
+              
             </p>
             <p className="text-base text-muted-foreground/80 leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
               While the global BCI market has grown to $2.75 billion, the vast majority of that
