@@ -55,7 +55,7 @@ export default function Navbar() {
           className="flex items-center gap-3 group"
         >
           <img
-            src="/logos/logo.png"
+            src="/logos/Logo.png"
             alt="BlueMatter logo"
             className="w-8 h-8 md:w-9 md:h-9 object-contain"
           />
