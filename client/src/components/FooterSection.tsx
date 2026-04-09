@@ -5,7 +5,7 @@
  */
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Linkedin, Instagram, ArrowUpRight, Brain } from "lucide-react";
+import { Mail, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 import NeuralBackground from "./NeuralBackground";
 
@@ -106,16 +106,11 @@ export default function FooterSection() {
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="relative w-7 h-7">
-                  <svg viewBox="0 0 36 36" className="w-full h-full" fill="none">
-                    <circle cx="18" cy="18" r="16" stroke="oklch(0.65 0.2 255)" strokeWidth="1.5" opacity="0.6" />
-                    <path
-                      d="M12 18c0-4 2.5-8 6-8s6 4 6 8-2.5 8-6 8-6-4-6-8z"
-                      stroke="oklch(0.65 0.2 255)"
-                      strokeWidth="1.5"
-                      fill="oklch(0.65 0.2 255 / 0.15)"
-                    />
-                    <circle cx="18" cy="14" r="2" fill="oklch(0.75 0.2 255)" />
-                  </svg>
+                  <img
+                    src="/favicon.png"
+                    alt="BlueMatter logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span
                   className="text-base font-semibold tracking-tight text-foreground"
