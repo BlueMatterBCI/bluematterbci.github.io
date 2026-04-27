@@ -6,6 +6,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Check, ArrowRight, Circle, Crosshair } from "lucide-react";
+import researchDesignImage from "./assets/research-design.png";
+import assemblyTestingImage from "./assets/assembly-testing.jpg";
+import prototypeRefinementImage from "./assets/prototype-refinement.png";
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef(null);
@@ -23,24 +26,39 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
-const milestones = [
+type Milestone = {
+  phase: string;
+  title: string;
+  status: "complete" | "current" | "upcoming";
+  items: string[];
+  image?: string;
+  imageAlt?: string;
+};
+
+const milestones: Milestone[] = [
   {
     phase: "Phase 1",
     title: "Research & Design",
     status: "complete",
     items: ["Background research", "Electrical & mechanical design", "BOM finalization", "Software development kickoff"],
+    image: researchDesignImage,
+    imageAlt: "PCB design render for the BlueMatter prototype",
   },
   {
     phase: "Phase 2",
     title: "Assembly & Testing",
     status: "complete",
     items: ["Battery & charging assembly", "Electrode fabrication", "Circuitry integration", "Data collection with pre-made EEG"],
+    image: assemblyTestingImage,
+    imageAlt: "BlueMatter team assembling and testing prototype hardware",
   },
   {
     phase: "Phase 3",
     title: "Prototype Refinement",
     status: "current",
     items: ["Extensive system testing", "AI data acquisition", "Head-fitting mesh design", "Comfortable electrode development"],
+    image: prototypeRefinementImage,
+    imageAlt: "Refined cap-based BlueMatter prototype with integrated wiring",
   },
   {
     phase: "Phase 4",
@@ -171,44 +189,61 @@ export default function RoadmapSection() {
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-3 mb-3">
-                    <span
-                      className={`text-xs font-bold tracking-wider uppercase ${
-                        milestone.status === "current" ? "text-electric" : "text-muted-foreground"
-                      }`}
-                      style={{ fontFamily: "var(--font-mono)" }}
-                    >
-                      {milestone.phase}
-                    </span>
-                    {milestone.status === "current" && (
-                      <span className="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-electric/20 text-electric rounded-full border border-electric/30">
-                        In Progress
-                      </span>
-                    )}
-                    {milestone.status === "complete" && (
-                      <span className="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-electric/10 text-electric/70 rounded-full">
-                        Complete
-                      </span>
-                    )}
-                  </div>
-                  <h3
-                    className="text-lg font-semibold text-foreground mb-3"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {milestone.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {milestone.items.map((item) => (
+                <div
+                  className={`flex-1 min-w-0 ${
+                    milestone.image
+                      ? "grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,26rem)] lg:items-start"
+                      : ""
+                  }`}
+                >
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
                       <span
-                        key={item}
-                        className="px-3 py-1 text-xs text-muted-foreground bg-muted/50 rounded-md border border-border/50"
-                        style={{ fontFamily: "var(--font-body)" }}
+                        className={`text-xs font-bold tracking-wider uppercase ${
+                          milestone.status === "current" ? "text-electric" : "text-muted-foreground"
+                        }`}
+                        style={{ fontFamily: "var(--font-mono)" }}
                       >
-                        {item}
+                        {milestone.phase}
                       </span>
-                    ))}
+                      {milestone.status === "current" && (
+                        <span className="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-electric/20 text-electric rounded-full border border-electric/30">
+                          In Progress
+                        </span>
+                      )}
+                      {milestone.status === "complete" && (
+                        <span className="px-2 py-0.5 text-[10px] font-bold tracking-wider uppercase bg-electric/10 text-electric/70 rounded-full">
+                          Complete
+                        </span>
+                      )}
+                    </div>
+                    <h3
+                      className="text-lg font-semibold text-foreground mb-3"
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {milestone.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {milestone.items.map((item) => (
+                        <span
+                          key={item}
+                          className="px-3 py-1 text-xs text-muted-foreground bg-muted/50 rounded-md border border-border/50"
+                          style={{ fontFamily: "var(--font-body)" }}
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+                  {milestone.image && (
+                    <div className="rounded-md border border-border/60 bg-muted/20 p-2 overflow-hidden">
+                      <img
+                        src={milestone.image}
+                        alt={milestone.imageAlt}
+                        className="block w-full h-auto rounded-md object-contain"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Arrow for completed */}
